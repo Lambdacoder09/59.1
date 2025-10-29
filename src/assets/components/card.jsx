@@ -18,6 +18,8 @@ function Card({ title, imageUrl, category, price, product }) {
         <p className="text-gray-700 font-semibold">${price}</p>
       </div>
 
+
+
       {/* Add to Cart */}
       <div className="mt-4 flex justify-center">
         <AddToCart product={product} />
