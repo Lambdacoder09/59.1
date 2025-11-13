@@ -5,7 +5,7 @@ function SearchBar({ searchTerm, onSearchChange }) {
     <input
       type="text"
       placeholder="Search by title or category..."
-      className=" border border-gray-300 rounded-2xl px-4 py-2 w-80 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+      className=" border  border-gray-300 rounded-2xl px-4 py-2 w-60 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 md:w-md"
       value={searchTerm}
       onChange={(e) => onSearchChange(e.target.value)}
     />

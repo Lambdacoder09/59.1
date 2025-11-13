@@ -6,7 +6,7 @@ import SortingMenu from "./SortingMenu.jsx";
 import axios from "axios";
 import Loading from "./Loading.jsx";
 
-export default function GalleryPage() {
+export default function GalleryPage({addToCart}) {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState("");
   const [products, setProducts] = useState([]);
@@ -52,6 +52,8 @@ export default function GalleryPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full place-items-center px-4">
   {sortedCards.map((card) => (
     <Card
+      product={card}
+      addToCart={addToCart}
       key={card.id}
       title={card.title}
       description={card.description}

@@ -12,7 +12,7 @@ const Loading = () => {
       </style>
 
       <div
-        className="text-8xl bg bg-gray-300 font-bold font-mono w-fit [clip-path:inset(0_3ch_0_0)] animate-[l4_1s_steps(4)_infinite] before:content-['Loading...']"
+        className="text-md md: text-8xl bg bg-gray-300 font-bold font-mono w-fit [clip-path:inset(0_3ch_0_0)] animate-[l4_1s_steps(4)_infinite] before:content-['Loading...']"
       ></div>
     </div>
   );
