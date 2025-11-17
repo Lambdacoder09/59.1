@@ -1,4 +1,4 @@
-
+import DescPage from "./assets/components/DescPage.jsx";
 import "./App.css";
 import GalleryPage from "./assets/components/GalleryPage";
 import Header from "./assets/components/HeaderBar.jsx";
@@ -32,11 +32,12 @@ function App() {
   return (<>
   <Header/>
   
-  <div className=" bg-blue-300">
+  <div className="">
   <Routes>
     <Route path="/" element={<GalleryPage cart={cart} addToCart={addToCart} /> } />
         <Route path="/InfoPage" element={<InfoPage/>} />
         <Route path="/CartPage" element={<CartPage cart={cart} setCart={setCart} />} />
+        <Route path="/:id" element={<DescPage />} />
 
 
   </Routes>
