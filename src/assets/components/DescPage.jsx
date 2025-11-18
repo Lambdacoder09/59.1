@@ -4,32 +4,37 @@ import axios from "axios";
 import Loading from "./Loading";
 import DescCard from "./DescCard";
 import HomepageButton from "./Homepage";
+
 function DescPage({ addToCart }) {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
-  const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     axios
-      .get("https://dummyjson.com/products")
+      .get(`https://dummyjson.com/products/${id}`)
       .then((res) => {
-        setProducts(res.data.products);
+        setProduct(res.data);
         setLoading(false);
       })
-      .catch(() => setLoading(false));
-  }, []);
+      .catch(() => {
+        setError(true);
+        setLoading(false);
+      });
+  }, [id]);
 
   if (loading) return <Loading />;
 
-  const card = products.find((p) => p.id === Number(id));
+  if (error || !product)
+    return <div className="text-white text-center">Product Not Found</div>;
 
-  if (!card)
-    return <div className="text-white text-center mt-10">Product Not Found</div>;
-
-  return <div className="bg-amber-100">
-    <HomepageButton/>
-
-    <DescCard product={card} addToCart={addToCart} /></div>;
+  return (
+    <div className="bg-amber-100 min-h-screen p-4">
+      <HomepageButton />
+      <DescCard product={product} addToCart={addToCart} />
+    </div>
+  );
 }
 
 export default DescPage;

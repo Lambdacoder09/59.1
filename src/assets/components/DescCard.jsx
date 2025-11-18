@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function DescCard({ product }) {
   return (
-    <div className="my-20 max-w-4xl mx-auto bg-white p-6 rounded-xl shadow-lg flex flex-col md:flex-row gap-8 mt-6">
+    <div className=" max-w-4xl  mx-auto bg-white p-6 rounded-xl shadow-lg flex flex-col md:flex-row gap-8 mt-6">
 
       {/* Product Image */}
       <div className="flex-1 flex justify-center">
